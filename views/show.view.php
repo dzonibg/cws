@@ -2,6 +2,7 @@
 <p><?=$description_short?></p>
 <p>He describes him/herself...</p>
 <p class="text-primary"><?=$description?></p>
+<p><b>Writes articles for <?=$hourly_rate?>$ per hour.</b></p>
 <p>People say about him/her:</p>
 <div class="card">
 <?php //var_dump($extra);

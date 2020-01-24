@@ -12,6 +12,7 @@
             </div>
             <div class="card-body">
                 <p>  <?=$cw->description_short?> </p>
+                <p>Hourly rate: <?=$cw->hourly_rate?>$</p>
                 <a href="/index/show/<?=$cw->id?>" class="btn btn-primary">View more</a>
             </div>
         </div>

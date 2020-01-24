@@ -24,9 +24,12 @@ class CommentController {
 
     }
 
-    public function store($cw_id) {
-
-
+    public function store() {
+        $comment = new Comment();
+        $comment->copywriter_id = $_POST['copywriter_id'];
+        $comment->name = $_POST['name'];
+        $comment->body = $_POST['body'];
+        $comment->store($comment);
     }
 
 }

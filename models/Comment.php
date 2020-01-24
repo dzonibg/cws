@@ -21,6 +21,19 @@ class Comment extends Model {
     public function approve($id) {
         $statement = $this->db()->prepare("UPDATE comment SET approved=1 WHERE id = :id");
         $statement->execute(['id' => $id]);
-        return "Approved";
+    }
+
+    public function store($new) {
+        $copywriter_id = $this->copywriter_id;
+        $name = $this->name;
+        $body = $this->body;
+        $statement = $this->db()
+            ->prepare("INSERT INTO comment (copywriter_id, name, body) VALUES (:copywriter_id, :name, :body)");
+        $statement->execute([
+            'copywriter_id' => $copywriter_id,
+            'name' => $name,
+            'body' => $body
+        ]);
+
     }
 }

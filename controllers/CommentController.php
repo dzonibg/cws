@@ -17,6 +17,7 @@ class CommentController {
     public function approve($id) {
         $comment = new Comment();
         $comment->approve($id);
+        redirect('admin/comments');
     }
 
     public function create() {

@@ -30,6 +30,7 @@ class CommentController {
         $comment->name = $_POST['name'];
         $comment->body = $_POST['body'];
         $comment->store($comment);
+        redirect('index/show/' . $comment->copywriter_id);
     }
 
 }

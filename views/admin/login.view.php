@@ -1,4 +1,5 @@
 <p>ADMIN LOGIN</p>
+<p>admin/admin will work</p>
 <div class="row justify-content-center">
     <div class="col-sm-6">
         <form class="form" method="POST" action="/admin/login">

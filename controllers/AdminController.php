@@ -30,4 +30,9 @@ class AdminController {
         $_SESSION['admin'] = true;
     }
 
+    public function logout() {
+        $_SESSION['admin'] = false;
+        $this->index();
+    }
+
 }

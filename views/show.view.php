@@ -1,0 +1,3 @@
+<?php
+?>
+A copywriter named <?=$name?>

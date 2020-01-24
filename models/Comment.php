@@ -36,4 +36,10 @@ class Comment extends Model {
         ]);
 
     }
+
+    public function get_unapproved() {
+        $statement = $this->db()->prepare("SELECT * FROM comment WHERE approved=0");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
 }

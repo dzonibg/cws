@@ -41,4 +41,10 @@ class AdminController {
         return view('admin/comments', $data);
     }
 
+    public function unapproved() {
+        $comments = new Comment();
+        $data = $comments->get_unapproved();
+        view('admin/unapproved', $data);
+    }
+
 }

@@ -16,9 +16,11 @@ class IndexController {
 
     public function show($id) {
         $cw = new ContentWriter();
-        $data = $cw->get($id);
+        $cw_data = $cw->get($id);
+        $comm = new Comment();
+        $comments = $comm->cw_comments($id);
 //        var_dump($data);
-        view('show', $data);
+        view('show', $cw_data, $comments);
     }
 
     public function create() {
@@ -32,6 +34,7 @@ class IndexController {
         $new->description_short = 'short description';
         $new->hourly_rate = 10;
         $new->store($new);
+        return redirect('index');
 
     }
 }

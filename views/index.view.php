@@ -1,14 +1,20 @@
-<?php
-?>
-List of copywriters:
-<?php
-//echo $data[0]->name;
-?>
+<h5 class="card-title">Welcome to our copywriting page!</h5>
+<p class="card-text">We encourage you to pick someone of our big copywriters list if you're in need for some quality articles.</p>
 
-<ul>
+
+<div class="row">
 <?php
     foreach ($data as $cw) { ?>
-    <li><?=$cw->name?></li>
-        <a href="/index/show/<?=$cw->id?>">Show</a>
+    <div class="col-sm-4">
+        <div class="card bg-light">
+            <div class="card-header">
+                <?=$cw->name?>
+            </div>
+            <div class="card-body">
+                <p>  <?=$cw->description_short?> </p>
+                <a href="/index/show/<?=$cw->id?>" class="btn btn-primary">View more</a>
+            </div>
+        </div>
+    </div>
     <?php } ?>
-</ul>
+    </div>

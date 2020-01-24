@@ -1,5 +1,10 @@
 <?php
 
+/*
+ *
+ *  NOT IN USE; IndexController is responsible for copywriter methods
+ */
+
 class ContentWriterController extends Controller {
 
     private $id;

@@ -26,9 +26,7 @@ class Router {
         $parameters = explode('/', $this->uri);
 //        print $this->uri;
 
-//        var_dump($parameters);
-
-        if (isset($parameters[0])) {
+        if ($parameters[0] != '') {
             $this->controller = $parameters[0];
         } else $this->controller = 'index';
 
@@ -39,6 +37,7 @@ class Router {
         if (isset($parameters[2])) {
             $this->parameters = $parameters[2];
         } else $this->parameters = '';
+//        var_dump($parameters);
 
 
     }
@@ -52,10 +51,12 @@ class Router {
 
     public function direct() {
         $this->route();
+        /* parameters debugging
         echo 'controller: '.  $this->controller;
         echo ' action: '. $this->action;
         echo ' parameters: ' . $this->parameters;
         echo '<br>';
+        */
         $controller =  $this->findController($this->controller);
         $action = $this->action;
         $controller = new $controller;

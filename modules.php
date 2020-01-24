@@ -1,6 +1,6 @@
 <?php
 
-function view($viewName, $data = []) {
+function view($viewName, $data = [], $extra = []) {
     extract($data);
     return require_once 'views/' . $viewName . '.view.php';
 }

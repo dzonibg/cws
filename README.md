@@ -8,6 +8,6 @@ For OneClick.
 TODO:
 
 - Admin panel
-- Comment approval
+- Comment approval - DONE
 - Copywriter creator
 - Comments RD for admin

@@ -35,4 +35,10 @@ class AdminController {
         $this->index();
     }
 
+    public function comments() {
+        $comments = new Comment();
+        $data = $comments->index();
+        return view('admin/comments', $data);
+    }
+
 }

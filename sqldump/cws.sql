@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 24, 2020 at 06:43 AM
+-- Generation Time: Jan 25, 2020 at 02:50 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `cws`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `token` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`, `token`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '');
 
 -- --------------------------------------------------------
 
@@ -44,10 +64,12 @@ INSERT INTO `comment` (`id`, `copywriter_id`, `name`, `body`, `approved`) VALUES
 (1, 1, 'Commenter', 'You are so awesome!', 1),
 (2, 1, 'Jake', 'Love this guys posts!', 1),
 (3, 1, 'Nikola', 'AWESOME GUY', 1),
-(4, 1, 'Test Name', 'Test Comment', 0),
-(5, 1, 'Another Test Name', 'Comment!', 0),
-(6, 1, 'Jake', 'Thank you for everything you wrote!', 0),
-(7, 2, 'Lisa', 'Hi Alison!', 0);
+(4, 1, 'Test Name', 'Test Comment', 1),
+(5, 1, 'Another Test Name', 'Comment!', 1),
+(6, 1, 'Jake', 'Thank you for everything you wrote!', 1),
+(7, 2, 'Lisa', 'Hi Alison!', 1),
+(8, 47, 'Mark', 'He\'s a cool guy.', 1),
+(9, 47, 'Anon', 'I love what he writes.', 1);
 
 -- --------------------------------------------------------
 
@@ -68,12 +90,10 @@ CREATE TABLE `copywriter` (
 --
 
 INSERT INTO `copywriter` (`id`, `name`, `description_short`, `description`, `hourly_rate`) VALUES
-(1, 'Nikola', 'Tech geek.', 'I love writing articles about technology.', 10),
-(2, 'Alison', 'Need makeup?', 'I love make up! I love writing about new products on the market and reviewing them. Every day I wake up and the first thing that comes to my mind is what should I do to my face.', 15),
-(3, 'test', 'short description', 'test description', 10),
-(4, 'test', 'short description', 'test description', 10),
-(5, 'test', 'short description', 'test description', 10),
-(6, 'test', 'short description', 'test description', 10);
+(47, 'Nikola', 'Tech geek.', 'Loves writing articles about technology.', 20),
+(48, 'Alison', 'Need makeup?', 'I love writing articles about makeup. It makes me so happy!', 10),
+(49, 'Joe', 'Football guy!', 'I love writing articles about football.', 10),
+(50, 'Mark', 'Got something for me?', 'I love writing about everything!', 5);
 
 -- --------------------------------------------------------
 
@@ -91,6 +111,12 @@ CREATE TABLE `test` (
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
@@ -100,7 +126,8 @@ ALTER TABLE `comment`
 -- Indexes for table `copywriter`
 --
 ALTER TABLE `copywriter`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `test`
@@ -113,16 +140,22 @@ ALTER TABLE `test`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `copywriter`
 --
 ALTER TABLE `copywriter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `test`

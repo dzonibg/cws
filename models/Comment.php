@@ -11,7 +11,7 @@ class Comment extends Model {
 
     public function cw_comments($id) {
         $statement = $this->db()
-            ->prepare("SELECT * FROM comment WHERE copywriter_id = :copywriter_id ORDER BY id DESC");
+            ->prepare("SELECT * FROM comment WHERE copywriter_id = :copywriter_id AND approved=1 ORDER BY id DESC");
         $statement->execute(['copywriter_id'=> $id]);
         $res = $statement->fetchAll(PDO::FETCH_OBJ);
 //        var_dump($res);

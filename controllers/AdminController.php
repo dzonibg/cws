@@ -82,4 +82,11 @@ class AdminController {
 
     }
 
+    public function delete_copywriter($id) {
+        $cw = new ContentWriter();
+        $cw->delete();
+        redirect('admin/copywriters');
+
+    }
+
 }

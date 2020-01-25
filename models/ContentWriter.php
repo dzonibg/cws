@@ -42,4 +42,10 @@ class ContentWriter extends Model {
 
     }
 
+    public function delete($id) {
+        $statement = $this->db()->prepare("DELETE FROM copywriter WHERE id = :id");
+        $statement->execute(['id' => $id]);
+        return 'Deleted';
+    }
+
 }

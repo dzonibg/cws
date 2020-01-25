@@ -68,15 +68,17 @@ class AdminController {
         $cw->description_short = $_POST['description_short'];
         $cw->description = $_POST['description'];
         $cw->hourly_rate = $_POST['hourly_rate'];
-        $cw->store($cw);
+        $id = $cw->store($cw);
+//        echo $cw->db()->lastInsertId('id'); //doesn't work, will use names for image names.
 
-//        var_dump($_FILES["image"]);
-//        $target_dir = 'resources/images/';
+        var_dump($_FILES["image"]);
+        $target_dir = 'resources/images/';
 //        $target_file = $target_dir . basename($_FILES["image"]["name"]);
-//        $targetFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-//        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+        $target_file = $target_dir . $cw->name . '.jpg';
+        $targetFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
 
-        view('admin/copywriters');
+        redirect('/admin/copywriters');
 
     }
 

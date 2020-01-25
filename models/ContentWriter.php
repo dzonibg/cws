@@ -38,8 +38,8 @@ class ContentWriter extends Model {
             'description_short' => $description_short,
             'hourly_rate' => $hourly_rate
         ]);
+//        var_dump($this->db()->lastInsertId()); fails to work
 
-        var_dump($new);
     }
 
 }

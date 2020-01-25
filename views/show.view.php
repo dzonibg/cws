@@ -1,3 +1,4 @@
+<img width="300" src="/resources/images/<?=$name?>.jpg">
 <p><b><?=$name?></b></p>
 <p><?=$description_short?></p>
 <p>He describes him/herself...</p>

@@ -11,6 +11,7 @@
                 <?=$cw->name?>
             </div>
             <div class="card-body">
+                <img width="300" src="../resources/images/<?=$cw->name?>.jpg">
                 <p>  <?=$cw->description_short?> </p>
                 <p>Hourly rate: <?=$cw->hourly_rate?>$</p>
                 <a href="/index/show/<?=$cw->id?>" class="btn btn-primary">View more</a>

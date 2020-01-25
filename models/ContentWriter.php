@@ -48,4 +48,10 @@ class ContentWriter extends Model {
         return 'Deleted';
     }
 
+    public function update($id, $name, $description_short, $description, $hourly_rate) {
+        $statement = $this->db()
+            ->prepare("UPDATE copywriter SET description_short=?, description=?, hourly_rate=? WHERE id=?");
+        $statement->execute([$description_short, $description, $hourly_rate, $id]);
+    }
+
 }

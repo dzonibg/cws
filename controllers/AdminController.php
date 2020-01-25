@@ -88,5 +88,11 @@ class AdminController {
         redirect('admin/copywriters');
 
     }
+    public function update_copywriter($id) {
+        $cw = new ContentWriter();
+        $cw->update($id, $_POST['name'], $_POST['description_short'], $_POST['description'], $_POST['hourly_rate']);
+        redirect('admin/edit_copywriter/' . $id);
+        echo "Edited";
+    }
 
 }

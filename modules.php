@@ -8,3 +8,7 @@ function view($viewName, $data = [], $extra = []) {
 function redirect($path) {
     header("Location:/" .$path);
 }
+
+function unauthorized() {
+    echo '401 Unauthorized';
+}

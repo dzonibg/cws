@@ -12,7 +12,7 @@ TODO:
 - Comment approval - DONE
 - Copywriter creator - DONE
 - Comments RD for admin ??
-- Auth checks.
+- Auth checks. - DONE
 
 ---
 

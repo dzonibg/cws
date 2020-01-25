@@ -78,7 +78,7 @@ class AdminController {
         $targetFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
 
-        redirect('/admin/copywriters');
+        redirect('admin/copywriters');
 
     }
 

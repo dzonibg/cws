@@ -47,4 +47,37 @@ class AdminController {
         view('admin/unapproved', $data);
     }
 
+    public function copywriters() {
+        $cws = new ContentWriter();
+        $data = $cws->index();
+        return view('admin/copywriters', $data);
+    }
+
+    public function edit_copywriter($id) {
+        $cw = new ContentWriter();
+        $data = $cw->get($id);
+        view('admin/edit_copywriter', $data);
+    }
+
+    public function add_copywriter() {
+        view('/admin/add_copywriter');
+    }
+    public function create_copywriter() {
+        $cw = new ContentWriter();
+        $cw->name = $_POST['name'];
+        $cw->description_short = $_POST['description_short'];
+        $cw->description = $_POST['description'];
+        $cw->hourly_rate = $_POST['hourly_rate'];
+        $cw->store($cw);
+
+//        var_dump($_FILES["image"]);
+//        $target_dir = 'resources/images/';
+//        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+//        $targetFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+//        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+
+        view('admin/copywriters');
+
+    }
+
 }

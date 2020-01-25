@@ -27,7 +27,7 @@ class IndexController {
         view('create');
     }
 
-    public function store() {
+    public function store() { //TODO
         $new = new ContentWriter();
         $new->name = "test";
         $new->description = 'test description';
